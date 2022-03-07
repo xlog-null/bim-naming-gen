@@ -8,7 +8,7 @@ namespace bim_naming_generator
 {
     internal class Field
     {
-        protected String content;
+        public String content;
         private int minChars, maxChars;
 
         public Field(String content, int minChars, int maxChars)
@@ -18,12 +18,17 @@ namespace bim_naming_generator
             this.maxChars = maxChars;
         }
 
-        public Boolean IsValid()
+        public void SetContent(String content)
         {
-            return content.Length >= minChars || content.Length <= maxChars;
+            this.content = content;
         }
 
-        public String getDisplayString()
+        public Boolean IsValid()
+        {
+            return content.Length >= minChars && content.Length <= maxChars;
+        }
+
+        public String GetDisplayString()
         {
             if (IsValid())
             {

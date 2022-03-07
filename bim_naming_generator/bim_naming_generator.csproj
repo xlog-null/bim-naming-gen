@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Field.cs" />
-    <Compile Include="ResultFileName.cs" />
+    <Compile Include="FormData.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

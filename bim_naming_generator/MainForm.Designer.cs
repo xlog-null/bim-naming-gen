@@ -38,12 +38,13 @@
             this.lblOriginator = new System.Windows.Forms.Label();
             this.lblProjectCode = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cbProjectCode = new System.Windows.Forms.ComboBox();
+            this.cbOriginator = new System.Windows.Forms.ComboBox();
+            this.cbVolumeOrSystem = new System.Windows.Forms.ComboBox();
+            this.cbLevelsAndLocations = new System.Windows.Forms.ComboBox();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.cbRole = new System.Windows.Forms.ComboBox();
+            this.tbNumber = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,12 +160,13 @@
             this.tableLayoutPanel1.Controls.Add(this.lblRole, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblNumber, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox2, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox3, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox4, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox5, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox6, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.cbProjectCode, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cbOriginator, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cbVolumeOrSystem, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbLevelsAndLocations, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cbType, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cbRole, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tbNumber, 2, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -178,67 +180,89 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 344);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // comboBox1
+            // cbProjectCode
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbProjectCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbProjectCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbProjectCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbProjectCode.FormattingEnabled = true;
+            this.cbProjectCode.Items.AddRange(new object[] {
             "Project 1",
             "Project 2",
             "Project 3",
             "Project 4",
             "Project 5"});
-            this.comboBox1.Location = new System.Drawing.Point(390, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(265, 24);
-            this.comboBox1.TabIndex = 8;
+            this.cbProjectCode.Location = new System.Drawing.Point(390, 12);
+            this.cbProjectCode.Name = "cbProjectCode";
+            this.cbProjectCode.Size = new System.Drawing.Size(265, 24);
+            this.cbProjectCode.TabIndex = 8;
+            this.cbProjectCode.Tag = "projectCode";
+            this.cbProjectCode.TextChanged += new System.EventHandler(this.OnFieldInput);
             // 
-            // comboBox2
+            // cbOriginator
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(390, 61);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(265, 24);
-            this.comboBox2.TabIndex = 9;
+            this.cbOriginator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbOriginator.FormattingEnabled = true;
+            this.cbOriginator.Location = new System.Drawing.Point(390, 61);
+            this.cbOriginator.Name = "cbOriginator";
+            this.cbOriginator.Size = new System.Drawing.Size(265, 24);
+            this.cbOriginator.TabIndex = 9;
+            this.cbOriginator.Tag = "originator";
+            this.cbOriginator.TextChanged += new System.EventHandler(this.OnFieldInput);
             // 
-            // comboBox3
+            // cbVolumeOrSystem
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(390, 110);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(265, 24);
-            this.comboBox3.TabIndex = 10;
+            this.cbVolumeOrSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbVolumeOrSystem.FormattingEnabled = true;
+            this.cbVolumeOrSystem.Location = new System.Drawing.Point(390, 110);
+            this.cbVolumeOrSystem.Name = "cbVolumeOrSystem";
+            this.cbVolumeOrSystem.Size = new System.Drawing.Size(265, 24);
+            this.cbVolumeOrSystem.TabIndex = 10;
+            this.cbVolumeOrSystem.Tag = "volOrSystem";
+            this.cbVolumeOrSystem.TextChanged += new System.EventHandler(this.OnFieldInput);
             // 
-            // comboBox4
+            // cbLevelsAndLocations
             // 
-            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(390, 159);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(265, 24);
-            this.comboBox4.TabIndex = 11;
+            this.cbLevelsAndLocations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLevelsAndLocations.FormattingEnabled = true;
+            this.cbLevelsAndLocations.Location = new System.Drawing.Point(390, 159);
+            this.cbLevelsAndLocations.Name = "cbLevelsAndLocations";
+            this.cbLevelsAndLocations.Size = new System.Drawing.Size(265, 24);
+            this.cbLevelsAndLocations.TabIndex = 11;
+            this.cbLevelsAndLocations.Tag = "levelsAndLocations";
+            this.cbLevelsAndLocations.TextChanged += new System.EventHandler(this.OnFieldInput);
             // 
-            // comboBox5
+            // cbType
             // 
-            this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(390, 208);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(265, 24);
-            this.comboBox5.TabIndex = 12;
+            this.cbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(390, 208);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(265, 24);
+            this.cbType.TabIndex = 12;
+            this.cbType.Tag = "type";
+            this.cbType.TextChanged += new System.EventHandler(this.OnFieldInput);
             // 
-            // comboBox6
+            // cbRole
             // 
-            this.comboBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(390, 257);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(265, 24);
-            this.comboBox6.TabIndex = 13;
+            this.cbRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.Location = new System.Drawing.Point(390, 257);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(265, 24);
+            this.cbRole.TabIndex = 13;
+            this.cbRole.Tag = "role";
+            this.cbRole.TextChanged += new System.EventHandler(this.OnFieldInput);
+            // 
+            // tbNumber
+            // 
+            this.tbNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNumber.Location = new System.Drawing.Point(390, 308);
+            this.tbNumber.Name = "tbNumber";
+            this.tbNumber.Size = new System.Drawing.Size(265, 22);
+            this.tbNumber.TabIndex = 15;
+            this.tbNumber.Tag = "number";
+            this.tbNumber.TextChanged += new System.EventHandler(this.OnFieldInput);
             // 
             // MainForm
             // 
@@ -267,12 +291,13 @@
         private System.Windows.Forms.Label lblOriginator;
         private System.Windows.Forms.Label lblProjectCode;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cbProjectCode;
+        private System.Windows.Forms.ComboBox cbOriginator;
+        private System.Windows.Forms.ComboBox cbVolumeOrSystem;
+        private System.Windows.Forms.ComboBox cbLevelsAndLocations;
+        private System.Windows.Forms.ComboBox cbType;
+        private System.Windows.Forms.ComboBox cbRole;
+        private System.Windows.Forms.TextBox tbNumber;
     }
 }
 

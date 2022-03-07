@@ -17,6 +17,7 @@ namespace bim_naming_generator
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+
         }
     }
 }
