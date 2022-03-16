@@ -48,7 +48,7 @@ namespace bim_naming_generator
             StringBuilder sb = new StringBuilder();
             foreach (var item in fields)             {
                 sb.Append(item.Value.GetDisplayString());
-                if (!item.Equals(fields.Last())) {
+                if (!item.Equals(fields.Last()) && item.Value.content.Length > 0) {
                     sb.Append("-");
                 }
             }

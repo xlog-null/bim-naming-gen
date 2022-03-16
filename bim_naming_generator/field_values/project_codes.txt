@@ -1,0 +1,49 @@
+﻿EXXXXX – No Project
+E00001 – Multiple Projects
+E21291 – MENSA
+E21298 – TMF Project Bury Office
+E21312 – MCRC
+E21314 – HFD Testing
+E21317 – FGMSP Export Project
+E21319 – AZ Speke
+E21322 – BEPPS1 & DIF
+E21324 – RLUH Royal Liverpool University Hospital
+E21328 – SILWEE21329 – Culham Working Drawings
+E21331 – GRRECE21332 – Harwell ILW
+E21333 – C610 Main Work
+E21336 – SMFDT Sellafield SMF
+E21338 – C435 Farringdon Station
+E21339 – B209 First Floor Containment
+E21341 – GSK Worthing – Manufacture Scope
+E21345 – Box Encapsulation Plant (BEP) Project
+E21346 – Sizewell A Vent
+E21347 – GEIC Fabtec Duct
+E21348 – NAPS Rolls Royce Derby
+E21349 – PFCS
+E21350 – B30 FGMSP Wet Bays – Supply Only Element
+E21351 – EPS1 Ductwork Supply Only
+E21352 – Graphene Insurance Project Folder
+E21353 – MAG Terminal 2
+E21354 – Helios Building 890 Porton Down
+E21355 – Keadby, Scunthorpe
+E21356 – HPC
+E21538 – DRD RAH 14 Dockyard
+E21892 – MENSA Module
+E21930 – Mezz Refurb
+E22000 – Sellafield Small Contracts
+E22533 – B204 Sellafield
+E22540 – BEPDT BEP Temp Vent
+E22561 – Hertel B38 Control Centre
+E22569 – B1914 Compressor House Sellafield
+E22570 – Exhaust Duct
+E22574 – B409 Duct Clean
+E22588 – PFCS Sellafield Installation of PAU-A
+E22589 – Wren
+E22608 – B379 Ductwork Modifications
+E22610 – B209 Containment Wall Sellafield
+E22611 – B215 Hales Project
+E25010 – Rolls Royce
+E42610 – B209
+E80000 – H.F.D Contracts
+E90000 – Trade Counter Contracts
+E99999 – Cardiff University

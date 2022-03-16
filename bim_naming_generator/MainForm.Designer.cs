@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lblFileName = new System.Windows.Forms.Label();
             this.lblNumber = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,22 +39,36 @@
             this.lblOriginator = new System.Windows.Forms.Label();
             this.lblProjectCode = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbProjectCode = new System.Windows.Forms.ComboBox();
             this.cbOriginator = new System.Windows.Forms.ComboBox();
             this.cbVolumeOrSystem = new System.Windows.Forms.ComboBox();
             this.cbLevelsAndLocations = new System.Windows.Forms.ComboBox();
             this.cbType = new System.Windows.Forms.ComboBox();
             this.cbRole = new System.Windows.Forms.ComboBox();
             this.tbNumber = new System.Windows.Forms.TextBox();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.pbProjectCode = new System.Windows.Forms.PictureBox();
+            this.cbProjectCode = new System.Windows.Forms.ComboBox();
+            this.pbOriginator = new System.Windows.Forms.PictureBox();
+            this.pbVolume = new System.Windows.Forms.PictureBox();
+            this.pbLevel = new System.Windows.Forms.PictureBox();
+            this.pbType = new System.Windows.Forms.PictureBox();
+            this.pbRole = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProjectCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOriginator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRole)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFileName
             // 
             this.lblFileName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblFileName.Location = new System.Drawing.Point(0, 402);
+            this.lblFileName.Location = new System.Drawing.Point(0, 327);
+            this.lblFileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(800, 48);
+            this.lblFileName.Size = new System.Drawing.Size(600, 39);
             this.lblFileName.TabIndex = 0;
             this.lblFileName.Text = "E21356-EHL-XX-XX-GU-XX-000001";
             this.lblFileName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -62,27 +77,30 @@
             // 
             this.lblNumber.AutoSize = true;
             this.lblNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNumber.Location = new System.Drawing.Point(119, 294);
+            this.lblNumber.Location = new System.Drawing.Point(89, 240);
+            this.lblNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(265, 50);
+            this.lblNumber.Size = new System.Drawing.Size(112, 40);
             this.lblNumber.TabIndex = 7;
             this.lblNumber.Text = "Number";
             this.lblNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(3, 245);
+            this.label2.Location = new System.Drawing.Point(2, 200);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.Size = new System.Drawing.Size(75, 19);
             this.label2.TabIndex = 0;
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRole.Location = new System.Drawing.Point(119, 245);
+            this.lblRole.Location = new System.Drawing.Point(89, 200);
+            this.lblRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(265, 49);
+            this.lblRole.Size = new System.Drawing.Size(112, 40);
             this.lblRole.TabIndex = 6;
             this.lblRole.Text = "Role";
             this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,9 +109,10 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblType.Location = new System.Drawing.Point(119, 196);
+            this.lblType.Location = new System.Drawing.Point(89, 160);
+            this.lblType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(265, 49);
+            this.lblType.Size = new System.Drawing.Size(112, 40);
             this.lblType.TabIndex = 5;
             this.lblType.Text = "Type";
             this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -102,9 +121,10 @@
             // 
             this.lblLevelsAndLocations.AutoSize = true;
             this.lblLevelsAndLocations.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLevelsAndLocations.Location = new System.Drawing.Point(119, 147);
+            this.lblLevelsAndLocations.Location = new System.Drawing.Point(89, 120);
+            this.lblLevelsAndLocations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLevelsAndLocations.Name = "lblLevelsAndLocations";
-            this.lblLevelsAndLocations.Size = new System.Drawing.Size(265, 49);
+            this.lblLevelsAndLocations.Size = new System.Drawing.Size(112, 40);
             this.lblLevelsAndLocations.TabIndex = 4;
             this.lblLevelsAndLocations.Text = "Levels and Locations";
             this.lblLevelsAndLocations.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,9 +133,10 @@
             // 
             this.lblVolumeOrSystem.AutoSize = true;
             this.lblVolumeOrSystem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblVolumeOrSystem.Location = new System.Drawing.Point(119, 98);
+            this.lblVolumeOrSystem.Location = new System.Drawing.Point(89, 80);
+            this.lblVolumeOrSystem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVolumeOrSystem.Name = "lblVolumeOrSystem";
-            this.lblVolumeOrSystem.Size = new System.Drawing.Size(265, 49);
+            this.lblVolumeOrSystem.Size = new System.Drawing.Size(112, 40);
             this.lblVolumeOrSystem.TabIndex = 3;
             this.lblVolumeOrSystem.Text = "Volume or System";
             this.lblVolumeOrSystem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,9 +145,10 @@
             // 
             this.lblOriginator.AutoSize = true;
             this.lblOriginator.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblOriginator.Location = new System.Drawing.Point(119, 49);
+            this.lblOriginator.Location = new System.Drawing.Point(89, 40);
+            this.lblOriginator.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOriginator.Name = "lblOriginator";
-            this.lblOriginator.Size = new System.Drawing.Size(265, 49);
+            this.lblOriginator.Size = new System.Drawing.Size(112, 40);
             this.lblOriginator.TabIndex = 2;
             this.lblOriginator.Text = "Originator";
             this.lblOriginator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -135,9 +157,10 @@
             // 
             this.lblProjectCode.AutoSize = true;
             this.lblProjectCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblProjectCode.Location = new System.Drawing.Point(119, 0);
+            this.lblProjectCode.Location = new System.Drawing.Point(89, 0);
+            this.lblProjectCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProjectCode.Name = "lblProjectCode";
-            this.lblProjectCode.Size = new System.Drawing.Size(265, 49);
+            this.lblProjectCode.Size = new System.Drawing.Size(112, 40);
             this.lblProjectCode.TabIndex = 1;
             this.lblProjectCode.Text = "Project Code";
             this.lblProjectCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,8 +172,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.Controls.Add(this.lblProjectCode, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblOriginator, 1, 1);
@@ -160,14 +183,22 @@
             this.tableLayoutPanel1.Controls.Add(this.lblRole, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblNumber, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.cbProjectCode, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbOriginator, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbVolumeOrSystem, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.cbLevelsAndLocations, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.cbType, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.cbRole, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.tbNumber, 2, 6);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Controls.Add(this.btnGenerate, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.pbProjectCode, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cbProjectCode, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbOriginator, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pbVolume, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pbLevel, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.pbType, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.pbRole, 3, 5);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 10);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -177,35 +208,19 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 344);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(582, 280);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // cbProjectCode
-            // 
-            this.cbProjectCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbProjectCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbProjectCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbProjectCode.FormattingEnabled = true;
-            this.cbProjectCode.Items.AddRange(new object[] {
-            "Project 1",
-            "Project 2",
-            "Project 3",
-            "Project 4",
-            "Project 5"});
-            this.cbProjectCode.Location = new System.Drawing.Point(390, 12);
-            this.cbProjectCode.Name = "cbProjectCode";
-            this.cbProjectCode.Size = new System.Drawing.Size(265, 24);
-            this.cbProjectCode.TabIndex = 8;
-            this.cbProjectCode.Tag = "projectCode";
-            this.cbProjectCode.TextChanged += new System.EventHandler(this.OnFieldInput);
             // 
             // cbOriginator
             // 
             this.cbOriginator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbOriginator.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbOriginator.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbOriginator.FormattingEnabled = true;
-            this.cbOriginator.Location = new System.Drawing.Point(390, 61);
+            this.cbOriginator.Location = new System.Drawing.Point(205, 49);
+            this.cbOriginator.Margin = new System.Windows.Forms.Padding(2);
             this.cbOriginator.Name = "cbOriginator";
-            this.cbOriginator.Size = new System.Drawing.Size(265, 24);
+            this.cbOriginator.Size = new System.Drawing.Size(287, 21);
             this.cbOriginator.TabIndex = 9;
             this.cbOriginator.Tag = "originator";
             this.cbOriginator.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -213,10 +228,13 @@
             // cbVolumeOrSystem
             // 
             this.cbVolumeOrSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbVolumeOrSystem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbVolumeOrSystem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbVolumeOrSystem.FormattingEnabled = true;
-            this.cbVolumeOrSystem.Location = new System.Drawing.Point(390, 110);
+            this.cbVolumeOrSystem.Location = new System.Drawing.Point(205, 89);
+            this.cbVolumeOrSystem.Margin = new System.Windows.Forms.Padding(2);
             this.cbVolumeOrSystem.Name = "cbVolumeOrSystem";
-            this.cbVolumeOrSystem.Size = new System.Drawing.Size(265, 24);
+            this.cbVolumeOrSystem.Size = new System.Drawing.Size(287, 21);
             this.cbVolumeOrSystem.TabIndex = 10;
             this.cbVolumeOrSystem.Tag = "volOrSystem";
             this.cbVolumeOrSystem.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -224,10 +242,13 @@
             // cbLevelsAndLocations
             // 
             this.cbLevelsAndLocations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLevelsAndLocations.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbLevelsAndLocations.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbLevelsAndLocations.FormattingEnabled = true;
-            this.cbLevelsAndLocations.Location = new System.Drawing.Point(390, 159);
+            this.cbLevelsAndLocations.Location = new System.Drawing.Point(205, 129);
+            this.cbLevelsAndLocations.Margin = new System.Windows.Forms.Padding(2);
             this.cbLevelsAndLocations.Name = "cbLevelsAndLocations";
-            this.cbLevelsAndLocations.Size = new System.Drawing.Size(265, 24);
+            this.cbLevelsAndLocations.Size = new System.Drawing.Size(287, 21);
             this.cbLevelsAndLocations.TabIndex = 11;
             this.cbLevelsAndLocations.Tag = "levelsAndLocations";
             this.cbLevelsAndLocations.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -235,10 +256,13 @@
             // cbType
             // 
             this.cbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(390, 208);
+            this.cbType.Location = new System.Drawing.Point(205, 169);
+            this.cbType.Margin = new System.Windows.Forms.Padding(2);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(265, 24);
+            this.cbType.Size = new System.Drawing.Size(287, 21);
             this.cbType.TabIndex = 12;
             this.cbType.Tag = "type";
             this.cbType.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -246,10 +270,13 @@
             // cbRole
             // 
             this.cbRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbRole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbRole.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbRole.FormattingEnabled = true;
-            this.cbRole.Location = new System.Drawing.Point(390, 257);
+            this.cbRole.Location = new System.Drawing.Point(205, 209);
+            this.cbRole.Margin = new System.Windows.Forms.Padding(2);
             this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(265, 24);
+            this.cbRole.Size = new System.Drawing.Size(287, 21);
             this.cbRole.TabIndex = 13;
             this.cbRole.Tag = "role";
             this.cbRole.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -257,24 +284,126 @@
             // tbNumber
             // 
             this.tbNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNumber.Location = new System.Drawing.Point(390, 308);
+            this.tbNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbNumber.Enabled = false;
+            this.tbNumber.Location = new System.Drawing.Point(205, 250);
+            this.tbNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbNumber.Name = "tbNumber";
-            this.tbNumber.Size = new System.Drawing.Size(265, 22);
+            this.tbNumber.Size = new System.Drawing.Size(287, 20);
             this.tbNumber.TabIndex = 15;
             this.tbNumber.Tag = "number";
             this.tbNumber.TextChanged += new System.EventHandler(this.OnFieldInput);
             // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGenerate.Location = new System.Drawing.Point(496, 242);
+            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(84, 36);
+            this.btnGenerate.TabIndex = 16;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // pbProjectCode
+            // 
+            this.pbProjectCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbProjectCode.Image = ((System.Drawing.Image)(resources.GetObject("pbProjectCode.Image")));
+            this.pbProjectCode.Location = new System.Drawing.Point(522, 4);
+            this.pbProjectCode.Name = "pbProjectCode";
+            this.pbProjectCode.Size = new System.Drawing.Size(31, 32);
+            this.pbProjectCode.TabIndex = 17;
+            this.pbProjectCode.TabStop = false;
+            this.pbProjectCode.Visible = false;
+            // 
+            // cbProjectCode
+            // 
+            this.cbProjectCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbProjectCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbProjectCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbProjectCode.FormattingEnabled = true;
+            this.cbProjectCode.Location = new System.Drawing.Point(205, 9);
+            this.cbProjectCode.Margin = new System.Windows.Forms.Padding(2);
+            this.cbProjectCode.Name = "cbProjectCode";
+            this.cbProjectCode.Size = new System.Drawing.Size(287, 21);
+            this.cbProjectCode.TabIndex = 8;
+            this.cbProjectCode.Tag = "projectCode";
+            this.cbProjectCode.TextChanged += new System.EventHandler(this.OnFieldInput);
+            // 
+            // pbOriginator
+            // 
+            this.pbOriginator.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbOriginator.Image = ((System.Drawing.Image)(resources.GetObject("pbOriginator.Image")));
+            this.pbOriginator.Location = new System.Drawing.Point(522, 44);
+            this.pbOriginator.Name = "pbOriginator";
+            this.pbOriginator.Size = new System.Drawing.Size(31, 32);
+            this.pbOriginator.TabIndex = 18;
+            this.pbOriginator.TabStop = false;
+            this.pbOriginator.Visible = false;
+            // 
+            // pbVolume
+            // 
+            this.pbVolume.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbVolume.Image = ((System.Drawing.Image)(resources.GetObject("pbVolume.Image")));
+            this.pbVolume.Location = new System.Drawing.Point(522, 84);
+            this.pbVolume.Name = "pbVolume";
+            this.pbVolume.Size = new System.Drawing.Size(31, 32);
+            this.pbVolume.TabIndex = 19;
+            this.pbVolume.TabStop = false;
+            this.pbVolume.Visible = false;
+            // 
+            // pbLevel
+            // 
+            this.pbLevel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbLevel.Image = ((System.Drawing.Image)(resources.GetObject("pbLevel.Image")));
+            this.pbLevel.Location = new System.Drawing.Point(522, 124);
+            this.pbLevel.Name = "pbLevel";
+            this.pbLevel.Size = new System.Drawing.Size(31, 32);
+            this.pbLevel.TabIndex = 20;
+            this.pbLevel.TabStop = false;
+            this.pbLevel.Visible = false;
+            // 
+            // pbType
+            // 
+            this.pbType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbType.Image = ((System.Drawing.Image)(resources.GetObject("pbType.Image")));
+            this.pbType.Location = new System.Drawing.Point(522, 164);
+            this.pbType.Name = "pbType";
+            this.pbType.Size = new System.Drawing.Size(31, 32);
+            this.pbType.TabIndex = 21;
+            this.pbType.TabStop = false;
+            this.pbType.Visible = false;
+            // 
+            // pbRole
+            // 
+            this.pbRole.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbRole.Image = ((System.Drawing.Image)(resources.GetObject("pbRole.Image")));
+            this.pbRole.Location = new System.Drawing.Point(522, 204);
+            this.pbRole.Name = "pbRole";
+            this.pbRole.Size = new System.Drawing.Size(31, 32);
+            this.pbRole.TabIndex = 22;
+            this.pbRole.TabStop = false;
+            this.pbRole.Visible = false;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblFileName);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProjectCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOriginator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRole)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -298,6 +427,13 @@
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.TextBox tbNumber;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.PictureBox pbProjectCode;
+        private System.Windows.Forms.PictureBox pbOriginator;
+        private System.Windows.Forms.PictureBox pbVolume;
+        private System.Windows.Forms.PictureBox pbLevel;
+        private System.Windows.Forms.PictureBox pbType;
+        private System.Windows.Forms.PictureBox pbRole;
     }
 }
 

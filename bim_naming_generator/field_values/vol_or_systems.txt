@@ -1,0 +1,18 @@
+ZZ – all volumes/systems
+XX – no volume/system52 – Waste Disposal
+53 – Mains Water Supply54 – Gaseous Supply
+55 – Space Cooling and Refrigeration
+56 – Space heating
+57 – Ventilation, Ductwork etc...
+58 – Public Health/Raw water
+59 – Plant, Parts FCU’s, etc...
+60 – Electrical Services
+61 – Mains Power
+62 – Power Supply General
+63 – Lighting General
+64 – Communications General
+65 – Telecommunications
+67 – Fire Systems General
+68 – Security General
+69 – Earthing General
+96 – Services/Utilities 

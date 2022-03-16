@@ -1,0 +1,9 @@
+ZZ – multiple levels/locations
+XX – no level/locations applicable
+00 – Base level
+01 – level 01
+02 – level 02 etc
+M1 – mezzanine above level 01
+M2 – mezzanine above level 02 etc
+B1 – basement level 1
+B2 – basement level 2 etc

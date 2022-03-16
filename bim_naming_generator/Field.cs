@@ -20,7 +20,7 @@ namespace bim_naming_generator
 
         public void SetContent(String content)
         {
-            this.content = content;
+            this.content = content.Split(' ').First().ToUpper();
         }
 
         public Boolean IsValid()
@@ -30,13 +30,14 @@ namespace bim_naming_generator
 
         public String GetDisplayString()
         {
-            if (IsValid())
-            {
-                return content;
-            } else
-            {
-                return "?";
-            }
+            return content;
+            //if (IsValid())
+            //{
+            //    return content;
+            //} else
+            //{
+            //    return "?";
+            //}
         }
     }
 }

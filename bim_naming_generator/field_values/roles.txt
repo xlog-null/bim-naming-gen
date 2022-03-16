@@ -1,0 +1,20 @@
+AA - architect
+BB - building surveyor
+CC - civil engineer
+DD - drainage, highways engineer
+EE - electrical engineer
+FF - facilities manager
+GG - geographical and land surveyor
+HH - heating and ventilation designer (deprecated)
+II - interior designer
+KK - client
+LL - landscape architect
+MM - mechanical engineer
+PP - public health engineer
+QQ - quantity surveyor
+SS - structural engineer
+TT - town and country planner
+WW - contractor
+XX - subcontractor
+YY - specialist designer
+ZZ - general (non-disciplinary)
