@@ -6,14 +6,22 @@ namespace bim_naming_generator
     internal class Generator
     {
         private Database db = new Database();
+        private GeneratorListener listener;
 
-        internal string GenerateNewNumber(string baseName)
+        public Generator(GeneratorListener listener)
+        {
+            this.listener = listener;
+        }
+
+
+        internal void GenerateNewNumber(string baseName)
         {
             var latestName = db.GetLatestName(baseName);
             var newNumber = "000001";
             if (latestName == "")
             {
-                return newNumber;
+                listener.OnGeneratedSuccess(newNumber);
+                return;
             }
             string newName;
             do
@@ -21,7 +29,7 @@ namespace bim_naming_generator
                 newNumber = GetNextNumber(latestName);
                 newName = baseName + newNumber;
             } while (db.CheckIfExists(newName));
-            return newNumber;
+            listener.OnGeneratedSuccess(newNumber);
         }
 
 

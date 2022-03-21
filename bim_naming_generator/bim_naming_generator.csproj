@@ -66,6 +66,7 @@
     <Compile Include="Field.cs" />
     <Compile Include="FormData.cs" />
     <Compile Include="Generator.cs" />
+    <Compile Include="GeneratorListener.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

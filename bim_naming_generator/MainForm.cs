@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace bim_naming_generator
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, GeneratorListener
     {
 
         private FormData formData = new FormData();
-        private Generator generator = new Generator();
+        private Generator generator;
         private Repository repo = new Repository();
 
         private Dictionary<object, PictureBox> pictureBoxes = new Dictionary<object, PictureBox>();
@@ -24,6 +24,7 @@ namespace bim_naming_generator
         public MainForm()
         {
             InitializeComponent();
+            generator = new Generator(this);
             LoadDataIntoFields();
             PopulatePictureBoxDict();
             ExtractFormData();
@@ -82,16 +83,15 @@ namespace bim_naming_generator
 
             btnGenerate.Enabled = formData.IsValid();
             tbNumber.Text = "";
+
+            btnCopy.Enabled = false;
+            btnClaim.Enabled = false;
         }
 
         // EVENT
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            var newNumber = generator.GenerateNewNumber(formData.ToString());
-            tbNumber.Text = newNumber;
-            formData.fields["number"].content = newNumber;
-            lblFileName.Text = formData.ToString();
-
+            generator.GenerateNewNumber(formData.ToString());
         }
 
         private void PopulatePictureBoxDict()
@@ -103,6 +103,25 @@ namespace bim_naming_generator
             pictureBoxes.Add(cbType, pbType);
             pictureBoxes.Add(cbRole, pbRole);
 
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(lblFileName.Text);
+        }
+
+        public void OnGeneratedSuccess(string newNumber)
+        {
+            tbNumber.Text = newNumber;
+            formData.fields["number"].content = newNumber;
+            lblFileName.Text = formData.ToString();
+            btnCopy.Enabled = true;
+            btnClaim.Enabled = true;
+        }
+
+        public void OnGeneratedFailure(string error)
+        {
+            
         }
     }
 }
