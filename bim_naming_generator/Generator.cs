@@ -1,19 +1,40 @@
-﻿namespace bim_naming_generator
+﻿using System;
+using System.Linq;
+
+namespace bim_naming_generator
 {
     internal class Generator
     {
-        private Repository repository = new Repository();
+        private Database db = new Database();
 
-        public string GenerateFileName(string baseName)
+        internal string GenerateNewNumber(string baseName)
         {
-            string number = "000001";
-            var data = repository.GetFiles(baseName);
-            if (data.Count == 0)
+            var latestName = db.GetLatestName(baseName);
+            var newNumber = "000001";
+            if (latestName == "")
             {
-                return baseName + "-" + number;
+                return newNumber;
             }
+            string newName;
+            do
+            {
+                newNumber = GetNextNumber(latestName);
+                newName = baseName + newNumber;
+            } while (db.CheckIfExists(newName));
+            return newNumber;
+        }
 
-            return "";
-        } 
+
+        private string GetNextNumber(string name)
+        {
+            var number = GetNumberFromFilename(name);
+            int newNumber = int.Parse(number) + 1;
+            return newNumber.ToString();
+        }
+
+        private string GetNumberFromFilename(string fileName)
+        {
+            return fileName.Split('-').Last();
+        }
     }
 }

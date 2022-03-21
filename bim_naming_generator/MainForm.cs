@@ -79,13 +79,19 @@ namespace bim_naming_generator
             {
                 pbIsFieldValid.Visible = false;
             }
-            
 
+            btnGenerate.Enabled = formData.IsValid();
+            tbNumber.Text = "";
         }
+
         // EVENT
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            
+            var newNumber = generator.GenerateNewNumber(formData.ToString());
+            tbNumber.Text = newNumber;
+            formData.fields["number"].content = newNumber;
+            lblFileName.Text = formData.ToString();
+
         }
 
         private void PopulatePictureBoxDict()

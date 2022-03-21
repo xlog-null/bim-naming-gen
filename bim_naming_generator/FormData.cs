@@ -19,6 +19,22 @@ namespace bim_naming_generator
             {"number", new Field("", 2, 6) }
        };
 
+        public bool IsValid()
+        {
+            foreach (var item in fields)
+            {
+                if (item.Key == "number")
+                {
+                    continue;
+                }
+                if (!item.Value.IsValid())
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         //public Field projectCode = new Field("", 2, 6);
         //public Field originator = new Field("", 3, 6);
         //public Field volOrSystem = new Field("", 1, 2);
@@ -30,14 +46,8 @@ namespace bim_naming_generator
         //private List<Field> allFields = new List<Field>();
 
         public FormData()
-        {
-            //allFields.Add(projectCode);
-            //allFields.Add(originator);
-            //allFields.Add(volOrSystem);
-            //allFields.Add(levels);
-            //allFields.Add(type);
-            //allFields.Add(role);
-            //allFields.Add(number);
+        { 
+
         }
         /**
          * Returns a string to be regardless of whether all fields are filled in.
