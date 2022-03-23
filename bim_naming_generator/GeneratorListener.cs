@@ -2,7 +2,6 @@
 {
     internal interface GeneratorListener
     {
-        void OnGeneratedSuccess(string newNumber);
-        void OnGeneratedFailure(string error);
+        void OnGenerateResult(string newNumber, bool result);
     }
 }

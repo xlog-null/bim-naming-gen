@@ -10,32 +10,35 @@ using System.Windows.Forms;
 
 namespace bim_naming_generator
 {
-    public partial class MainForm : Form, GeneratorListener
+    public partial class MainForm : Form
     {
 
         private FormData formData = new FormData();
-        private Generator generator;
         private Repository repo = new Repository();
 
         private Dictionary<object, PictureBox> pictureBoxes = new Dictionary<object, PictureBox>();
-
+        private MainFormPresenter presenter;
 
 
         public MainForm()
         {
             InitializeComponent();
-            generator = new Generator(this);
+            presenter = new MainFormPresenter(this);
             LoadDataIntoFields();
             PopulatePictureBoxDict();
             ExtractFormData();
             DisplayResultFileName();
         }
 
+        private void MainForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            presenter.OnFormClose();
+        }
+
         internal void UpdateFileName(string fileName)
         {
             lblFileName.Text = fileName;
         }
-
 
         private void ExtractFormData()
         {
@@ -71,8 +74,6 @@ namespace bim_naming_generator
             var field = (Control) sender;
             var fieldTag = field.Tag.ToString();
             formData.fields[fieldTag].SetContent(field.Text);
-            lblFileName.Text = formData.ToString();
-
             var pbIsFieldValid = pictureBoxes[sender];
             if (formData.fields[fieldTag].IsValid()) {
                 pbIsFieldValid.Visible = true;
@@ -86,13 +87,11 @@ namespace bim_naming_generator
 
             btnCopy.Enabled = false;
             btnClaim.Enabled = false;
+            lblInfo.Visible = false;
+            formData.fields["number"].content = "";
+            lblFileName.Text = formData.ToString();
         }
 
-        // EVENT
-        private void btnGenerate_Click(object sender, EventArgs e)
-        {
-            generator.GenerateNewNumber(formData.ToString());
-        }
 
         private void PopulatePictureBoxDict()
         {
@@ -102,7 +101,54 @@ namespace bim_naming_generator
             pictureBoxes.Add(cbLevelsAndLocations, pbLevel);
             pictureBoxes.Add(cbType, pbType);
             pictureBoxes.Add(cbRole, pbRole);
+        }
 
+        public void OnGeneratorResult(string newNumber, bool success) 
+        {
+            if (success)
+            {
+                tbNumber.Text = newNumber;
+                formData.fields["number"].content = newNumber;
+                lblFileName.Text = formData.ToString();
+                btnClaim.Enabled = true;
+            } else
+            {
+                lblInfo.Text = "Error generating file name";
+                lblInfo.ForeColor = Color.DarkRed;
+                lblInfo.Visible = true;
+            }
+            
+        }
+
+        internal void OnFileClaimResult(string fileName, bool success, string errorMessage)
+        {
+            btnClaim.Enabled = !success;
+            lblInfo.Visible = true;
+            if (success)
+            {
+                lblInfo.Text = "File name claimed successfully.";
+                lblInfo.ForeColor = Color.DarkGreen;
+                btnCopy.Enabled = true;
+            } else
+            {
+                lblInfo.Text = errorMessage;
+                lblInfo.ForeColor = Color.DarkRed;
+                btnCopy.Enabled = false;
+            }
+        }
+
+
+        // EVENT
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            btnCopy.Enabled = false;
+            lblInfo.Visible = false;
+            // if a number is there
+            tbNumber.Text = "";
+            formData.fields["number"].content = "";
+            var baseName = formData.ToString();
+            lblFileName.Text = baseName;
+            presenter.OnGenerateClick(baseName);
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
@@ -110,18 +156,9 @@ namespace bim_naming_generator
             Clipboard.SetText(lblFileName.Text);
         }
 
-        public void OnGeneratedSuccess(string newNumber)
+        private void btnClaim_Click(object sender, EventArgs e)
         {
-            tbNumber.Text = newNumber;
-            formData.fields["number"].content = newNumber;
-            lblFileName.Text = formData.ToString();
-            btnCopy.Enabled = true;
-            btnClaim.Enabled = true;
-        }
-
-        public void OnGeneratedFailure(string error)
-        {
-            
+            presenter.OnClaimClick(formData.ToString());
         }
     }
 }

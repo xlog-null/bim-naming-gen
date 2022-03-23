@@ -56,6 +56,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnClaim = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProjectCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginator)).BeginInit();
@@ -64,14 +66,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRole)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFileName
             // 
-            this.lblFileName.Location = new System.Drawing.Point(0, 292);
+            this.lblFileName.Location = new System.Drawing.Point(2, 0);
             this.lblFileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(600, 34);
+            this.lblFileName.Size = new System.Drawing.Size(591, 18);
             this.lblFileName.TabIndex = 0;
             this.lblFileName.Text = "E21356-EHL-XX-XX-GU-XX-000001";
             this.lblFileName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,7 +204,7 @@
             this.tableLayoutPanel1.Controls.Add(this.pbType, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.pbRole, 3, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 10);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -221,7 +224,7 @@
             this.cbOriginator.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbOriginator.FormattingEnabled = true;
             this.cbOriginator.Location = new System.Drawing.Point(205, 48);
-            this.cbOriginator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbOriginator.Margin = new System.Windows.Forms.Padding(2);
             this.cbOriginator.Name = "cbOriginator";
             this.cbOriginator.Size = new System.Drawing.Size(287, 21);
             this.cbOriginator.TabIndex = 9;
@@ -235,7 +238,7 @@
             this.cbVolumeOrSystem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbVolumeOrSystem.FormattingEnabled = true;
             this.cbVolumeOrSystem.Location = new System.Drawing.Point(205, 87);
-            this.cbVolumeOrSystem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbVolumeOrSystem.Margin = new System.Windows.Forms.Padding(2);
             this.cbVolumeOrSystem.Name = "cbVolumeOrSystem";
             this.cbVolumeOrSystem.Size = new System.Drawing.Size(287, 21);
             this.cbVolumeOrSystem.TabIndex = 10;
@@ -249,7 +252,7 @@
             this.cbLevelsAndLocations.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbLevelsAndLocations.FormattingEnabled = true;
             this.cbLevelsAndLocations.Location = new System.Drawing.Point(205, 126);
-            this.cbLevelsAndLocations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLevelsAndLocations.Margin = new System.Windows.Forms.Padding(2);
             this.cbLevelsAndLocations.Name = "cbLevelsAndLocations";
             this.cbLevelsAndLocations.Size = new System.Drawing.Size(287, 21);
             this.cbLevelsAndLocations.TabIndex = 11;
@@ -263,7 +266,7 @@
             this.cbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbType.FormattingEnabled = true;
             this.cbType.Location = new System.Drawing.Point(205, 165);
-            this.cbType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbType.Margin = new System.Windows.Forms.Padding(2);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(287, 21);
             this.cbType.TabIndex = 12;
@@ -277,7 +280,7 @@
             this.cbRole.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbRole.FormattingEnabled = true;
             this.cbRole.Location = new System.Drawing.Point(205, 204);
-            this.cbRole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbRole.Margin = new System.Windows.Forms.Padding(2);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(287, 21);
             this.cbRole.TabIndex = 13;
@@ -290,7 +293,7 @@
             this.tbNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbNumber.Enabled = false;
             this.tbNumber.Location = new System.Drawing.Point(205, 247);
-            this.tbNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbNumber.Name = "tbNumber";
             this.tbNumber.Size = new System.Drawing.Size(287, 20);
             this.tbNumber.TabIndex = 15;
@@ -301,7 +304,7 @@
             this.btnGenerate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGenerate.Enabled = false;
             this.btnGenerate.Location = new System.Drawing.Point(496, 243);
-            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(83, 27);
             this.btnGenerate.TabIndex = 16;
@@ -328,7 +331,7 @@
             this.cbProjectCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbProjectCode.FormattingEnabled = true;
             this.cbProjectCode.Location = new System.Drawing.Point(205, 9);
-            this.cbProjectCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbProjectCode.Margin = new System.Windows.Forms.Padding(2);
             this.cbProjectCode.Name = "cbProjectCode";
             this.cbProjectCode.Size = new System.Drawing.Size(287, 21);
             this.cbProjectCode.TabIndex = 8;
@@ -400,11 +403,11 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.btnCopy, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnClaim, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCopy, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnClaim, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 331);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -413,11 +416,11 @@
             // 
             // btnCopy
             // 
-            this.btnCopy.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCopy.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnCopy.AutoSize = true;
             this.btnCopy.Enabled = false;
-            this.btnCopy.Location = new System.Drawing.Point(196, 6);
-            this.btnCopy.Margin = new System.Windows.Forms.Padding(2, 2, 18, 2);
+            this.btnCopy.Location = new System.Drawing.Point(320, 6);
+            this.btnCopy.Margin = new System.Windows.Forms.Padding(20, 2, 2, 2);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(86, 23);
             this.btnCopy.TabIndex = 0;
@@ -427,26 +430,53 @@
             // 
             // btnClaim
             // 
-            this.btnClaim.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnClaim.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClaim.AutoSize = true;
             this.btnClaim.Enabled = false;
-            this.btnClaim.Location = new System.Drawing.Point(318, 6);
-            this.btnClaim.Margin = new System.Windows.Forms.Padding(18, 2, 2, 2);
+            this.btnClaim.Location = new System.Drawing.Point(193, 6);
+            this.btnClaim.Margin = new System.Windows.Forms.Padding(2, 2, 20, 2);
             this.btnClaim.Name = "btnClaim";
             this.btnClaim.Size = new System.Drawing.Size(87, 23);
             this.btnClaim.TabIndex = 1;
             this.btnClaim.Text = "Claim file name";
             this.btnClaim.UseVisualStyleBackColor = true;
+            this.btnClaim.Click += new System.EventHandler(this.btnClaim_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.lblInfo, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblFileName, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 293);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(600, 38);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.Location = new System.Drawing.Point(2, 19);
+            this.lblInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(591, 18);
+            this.lblInfo.TabIndex = 1;
+            this.lblInfo.Text = "Info";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInfo.Visible = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.lblFileName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -459,6 +489,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRole)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -492,6 +523,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnClaim;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label lblInfo;
     }
 }
 
