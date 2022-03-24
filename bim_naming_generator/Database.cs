@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace bim_naming_generator
 {
     internal class Database
     {
-        private string connectionString =
-            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\dev\bim-naming-gen\bim_naming_generator\database.mdf;Integrated Security = True";
+        //private string connectionString =
+        //    @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\dev\bim-naming-gen\bim_naming_generator\database.mdf;Integrated Security = True";
         //private SqlConnection dbConn;
 
+        private string connectionString = @"URI=file:F:\dev\bim-naming-gen\bim_naming_generator\db\filenames.db";
         private DbListener listener;
 
 
@@ -43,63 +44,76 @@ namespace bim_naming_generator
                 success = false;
             } else
             {
-                var query = "INSERT INTO filenames (filename) VALUES ('" + fileName + "')";
-
-                using (var dbConn = new SqlConnection(connectionString))
+                using (var dbConn = new SQLiteConnection(connectionString))
                 {
-                    var command = new SqlCommand(query, dbConn);
                     dbConn.Open();
-                    if (command.ExecuteNonQuery().Equals(1))
+                    using (var command = new SQLiteCommand(dbConn))
                     {
-                        success = true;
+                        command.CommandText = "INSERT INTO filenames (filename) VALUES (@filename)";
+                        command.Parameters.AddWithValue("@filename", fileName);
+                        command.CommandTimeout = 3;
+                        if (command.ExecuteNonQuery().Equals(1))
+                        {
+                            success = true;
+                        }
+                        else
+                        {
+                            errorMessage = "Adding file name to database failed.";
+                            success = false;
+                        }
                     }
-                    else
-                    {
-                        errorMessage = "Adding file name to database failed.";
-                        success = false;
-                    }
+
                 }
             }
             listener.OnFileClaimResult(fileName, success, errorMessage);
         }
 
-        public bool CheckIfExists(string filename)
+        public bool CheckIfExists(string fileName)
         {
-            var query = "SELECT Id FROM filenames WHERE filename='" + filename + "'";
-            using (var dbConn = new SqlConnection(connectionString))
+            using (var dbConn = new SQLiteConnection(connectionString))
             {
-                var command = new SqlCommand(query, dbConn);
                 dbConn.Open();
-                var dataReader = command.ExecuteReader();
-                var exists = dataReader.HasRows;
-                dbConn.Close();
-                return exists;
+                using (var command = new SQLiteCommand(dbConn))
+                {
+                    command.CommandText = "SELECT Id FROM filenames WHERE filename=@fileName";
+                    command.Parameters.AddWithValue("@filename", fileName);
+
+                    var dataReader = command.ExecuteReader();
+                    return dataReader.HasRows;
+                }
             }
         }
 
         public string GetLatestName(string baseName)
         {
-            var query = "SELECT TOP 1 filename " +
+            var query = "SELECT filename " +
                 "FROM filenames " +
-                "WHERE filename LIKE '%" + baseName + "%' " +
-                "ORDER BY filename DESC";
-            using (var dbConn = new SqlConnection(connectionString))
+                "WHERE filename LIKE @baseName " +
+                "ORDER BY filename DESC " +
+                "LIMIT 1";
+            string result = "";
+            using (var dbConn = new SQLiteConnection(connectionString))
             {
                 dbConn.Open();
-                var reader = new SqlCommand(query, dbConn).ExecuteReader();
-                string result = "";
-                if (reader.HasRows)
+                using (var command = new SQLiteCommand(dbConn))
                 {
-                    reader.Read();
-                    result = reader.GetString(0);
+                    command.CommandText = query;
+                    command.Parameters.AddWithValue("@baseName", baseName + "%");
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            result = reader.GetString(0);
+                        }
+                        else
+                        {
+                            result = "";
+                        }
+                    }
                 }
-                else
-                {
-                    result = "";
-                }
-                dbConn.Close();
-                return result;
             }
+            return result;
         }
 
         public ArrayList GetAllFileNames()

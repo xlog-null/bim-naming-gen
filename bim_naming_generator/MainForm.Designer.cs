@@ -89,7 +89,7 @@
             this.lblNumber.Size = new System.Drawing.Size(112, 46);
             this.lblNumber.TabIndex = 7;
             this.lblNumber.Text = "Number";
-            this.lblNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -109,7 +109,7 @@
             this.lblRole.Size = new System.Drawing.Size(112, 39);
             this.lblRole.TabIndex = 6;
             this.lblRole.Text = "Role";
-            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblType
             // 
@@ -121,7 +121,7 @@
             this.lblType.Size = new System.Drawing.Size(112, 39);
             this.lblType.TabIndex = 5;
             this.lblType.Text = "Type";
-            this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblLevelsAndLocations
             // 
@@ -133,7 +133,7 @@
             this.lblLevelsAndLocations.Size = new System.Drawing.Size(112, 39);
             this.lblLevelsAndLocations.TabIndex = 4;
             this.lblLevelsAndLocations.Text = "Levels and Locations";
-            this.lblLevelsAndLocations.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLevelsAndLocations.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblVolumeOrSystem
             // 
@@ -145,7 +145,7 @@
             this.lblVolumeOrSystem.Size = new System.Drawing.Size(112, 39);
             this.lblVolumeOrSystem.TabIndex = 3;
             this.lblVolumeOrSystem.Text = "Volume or System";
-            this.lblVolumeOrSystem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblVolumeOrSystem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblOriginator
             // 
@@ -157,7 +157,7 @@
             this.lblOriginator.Size = new System.Drawing.Size(112, 39);
             this.lblOriginator.TabIndex = 2;
             this.lblOriginator.Text = "Originator";
-            this.lblOriginator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOriginator.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblProjectCode
             // 
@@ -169,7 +169,7 @@
             this.lblProjectCode.Size = new System.Drawing.Size(112, 39);
             this.lblProjectCode.TabIndex = 1;
             this.lblProjectCode.Text = "Project Code";
-            this.lblProjectCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProjectCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel1
             // 

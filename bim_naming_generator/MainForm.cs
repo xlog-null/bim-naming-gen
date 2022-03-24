@@ -158,6 +158,7 @@ namespace bim_naming_generator
 
         private void btnClaim_Click(object sender, EventArgs e)
         {
+            btnGenerate.Focus();
             presenter.OnClaimClick(formData.ToString());
         }
     }

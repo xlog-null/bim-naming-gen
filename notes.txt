@@ -1,0 +1,33 @@
+MainForm.OnClickClaim() {
+	btnClaim.Enabled = false
+	ShowLoadingUI()
+	Presenter.OnClickClaim(fileName)
+}
+
+MainForm.OnClaimFileNameResult(string fileName, bool success) {
+	btnClaim.Enabled = !success
+	StopLoadingUI()
+	if (success) {
+		ShowClaimSuccess() {
+			lblSuccessMessage.Visible = true;
+		}
+	} else {
+		ShowError() {
+			lblError.Text = "Something went wrong claiming the filename";
+			lblError.Visible = true;
+		}
+	}
+}
+
+
+Presenter.OnClickClaim(fileName) {
+	bool success = false;
+	try {
+		db.ClaimFileName(fileName)
+		success = true
+	} catch {
+		success = false
+	}
+	Form.OnClaimFileNameResult(fileName, success)
+	
+}

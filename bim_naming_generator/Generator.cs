@@ -36,9 +36,9 @@ namespace bim_naming_generator
 
         private string GetNextNumber(string name)
         {
-            var number = GetNumberFromFilename(name);   // "000010"         
-            int newNumber = int.Parse(number) + 1;      // 11
-            return newNumber.ToString().PadLeft(6, '0');          
+            var number = GetNumberFromFilename(name);
+            int newNumber = int.Parse(number) + 1;
+            return newNumber.ToString().PadLeft(6, '0');
         }
 
         private string GetNumberFromFilename(string fileName)
