@@ -6,31 +6,12 @@ namespace bim_naming_generator
 {
     internal class Database
     {
-        //private string connectionString =
-        //    @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\dev\bim-naming-gen\bim_naming_generator\database.mdf;Integrated Security = True";
-        //private SqlConnection dbConn;
-
-        private string connectionString = @"URI=file:F:\dev\bim-naming-gen\bim_naming_generator\db\filenames.db";
+        private string connectionString = @"URI=file:\\exyte-file01\programs\BIM Naming Generator\data\filenames.db";
         private DbListener listener;
-
-
-        // mock data
-        private ArrayList data = new ArrayList();
 
         public Database(DbListener listener)
         {
-
-            this.listener = listener;
-            //dbConn = new SqlConnection(connectionString);
-            
-        }
-
-        internal void Close()
-        {
-            //if (dbConn != null && dbConn.State == System.Data.ConnectionState.Open)
-            //{
-            //    dbConn.Close();
-            //}
+            this.listener = listener; 
         }
 
         internal void ClaimFileName(string fileName)
@@ -44,7 +25,7 @@ namespace bim_naming_generator
                 success = false;
             } else
             {
-                using (var dbConn = new SQLiteConnection(connectionString))
+                using (var dbConn = new SQLiteConnection(connectionString, true))
                 {
                     dbConn.Open();
                     using (var command = new SQLiteCommand(dbConn))
@@ -70,7 +51,7 @@ namespace bim_naming_generator
 
         public bool CheckIfExists(string fileName)
         {
-            using (var dbConn = new SQLiteConnection(connectionString))
+            using (var dbConn = new SQLiteConnection(connectionString, true))
             {
                 dbConn.Open();
                 using (var command = new SQLiteCommand(dbConn))
@@ -92,7 +73,7 @@ namespace bim_naming_generator
                 "ORDER BY filename DESC " +
                 "LIMIT 1";
             string result = "";
-            using (var dbConn = new SQLiteConnection(connectionString))
+            using (var dbConn = new SQLiteConnection(connectionString, true))
             {
                 dbConn.Open();
                 using (var command = new SQLiteCommand(dbConn))
@@ -114,11 +95,6 @@ namespace bim_naming_generator
                 }
             }
             return result;
-        }
-
-        public ArrayList GetAllFileNames()
-        {
-            return data;
         }
     }
 }

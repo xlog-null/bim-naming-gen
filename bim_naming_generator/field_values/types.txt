@@ -1,5 +1,6 @@
 AF - Animation file (of a model)
-AG – AgendaAI – Approval in principle
+AG – Agenda
+AI – Approval in principle
 AP – Application for payment/invoice
 AR – Accident report
 BM – Bill of materials

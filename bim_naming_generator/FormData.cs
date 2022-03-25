@@ -35,16 +35,6 @@ namespace bim_naming_generator
             return true;
         }
 
-        //public Field projectCode = new Field("", 2, 6);
-        //public Field originator = new Field("", 3, 6);
-        //public Field volOrSystem = new Field("", 1, 2);
-        //public Field levels = new Field("", 2, 2);
-        //public Field type = new Field("", 2, 2);
-        //public Field role = new Field("", 1, 2);
-        //public Field number = new Field("", 2, 6);
-
-        //private List<Field> allFields = new List<Field>();
-
         public FormData()
         { 
 
@@ -65,8 +55,4 @@ namespace bim_naming_generator
             return sb.ToString();
         }
     }
-
-
-
-   
 }

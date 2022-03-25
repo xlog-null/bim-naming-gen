@@ -14,7 +14,6 @@ namespace bim_naming_generator
             this.listener = listener;
         }
 
-
         internal void GenerateNewNumber(string baseName)
         {
             var latestName = db.GetLatestName(baseName);
@@ -32,7 +31,6 @@ namespace bim_naming_generator
             } while (db.CheckIfExists(newName));
             listener.OnGenerateResult(newNumber, true);
         }
-
 
         private string GetNextNumber(string name)
         {

@@ -7,7 +7,7 @@ namespace bim_naming_generator
 {
     internal class Repository
     {
-        private string fieldValuesDir = "F:\\dev\\bim-naming-gen\\bim_naming_generator\\field_values\\";
+        private string fieldValuesDir = @"\\exyte-file01\programs\BIM Naming Generator\data\field_values\";
 
         public string[] LoadData(string filename)
         {

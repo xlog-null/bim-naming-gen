@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace bim_naming_generator
@@ -67,17 +62,17 @@ namespace bim_naming_generator
             lblFileName.Text = formData.ToString();
         }
 
-
-        // EVENT
         private void OnFieldInput(object sender, EventArgs e)
         {
-            var field = (Control) sender;
+            var field = (Control)sender;
             var fieldTag = field.Tag.ToString();
             formData.fields[fieldTag].SetContent(field.Text);
             var pbIsFieldValid = pictureBoxes[sender];
-            if (formData.fields[fieldTag].IsValid()) {
+            if (formData.fields[fieldTag].IsValid())
+            {
                 pbIsFieldValid.Visible = true;
-            } else
+            }
+            else
             {
                 pbIsFieldValid.Visible = false;
             }
@@ -91,7 +86,6 @@ namespace bim_naming_generator
             formData.fields["number"].content = "";
             lblFileName.Text = formData.ToString();
         }
-
 
         private void PopulatePictureBoxDict()
         {
@@ -137,13 +131,10 @@ namespace bim_naming_generator
             }
         }
 
-
-        // EVENT
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             btnCopy.Enabled = false;
             lblInfo.Visible = false;
-            // if a number is there
             tbNumber.Text = "";
             formData.fields["number"].content = "";
             var baseName = formData.ToString();

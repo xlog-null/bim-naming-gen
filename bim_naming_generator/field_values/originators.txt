@@ -1,5 +1,6 @@
 EHL – Exyte Hargreaves Limited
-A1F – A1 FluteBAB – Babcock
+A1F – A1 Flute
+BAB – Babcock
 CKL – Charles Kerr Limited
 HLA – Hoare Lea Acoustics (Acoustic Engineering)
 HLF - Hoare Lea Fire (Fire Engineering)
