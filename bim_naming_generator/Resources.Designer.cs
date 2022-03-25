@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace bim_naming_generator.Properties {
+namespace bim_naming_generator {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace bim_naming_generator.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("bim_naming_generator.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("bim_naming_generator.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -66,6 +66,26 @@ namespace bim_naming_generator.Properties {
         internal static System.Drawing.Bitmap exyte_logo {
             get {
                 object obj = ResourceManager.GetObject("exyte_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon X_icon {
+            get {
+                object obj = ResourceManager.GetObject("X_icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap X_icon_png {
+            get {
+                object obj = ResourceManager.GetObject("X_icon_png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

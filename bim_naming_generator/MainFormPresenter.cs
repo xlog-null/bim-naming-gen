@@ -41,7 +41,7 @@ namespace bim_naming_generator
 
         internal void OnFormClose()
         {
-            db.Close();
+
         }
     }
 }

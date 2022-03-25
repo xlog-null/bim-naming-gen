@@ -83,17 +83,17 @@
             // 
             this.lblNumber.AutoSize = true;
             this.lblNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNumber.Location = new System.Drawing.Point(89, 234);
+            this.lblNumber.Location = new System.Drawing.Point(89, 210);
             this.lblNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(112, 46);
+            this.lblNumber.Size = new System.Drawing.Size(113, 39);
             this.lblNumber.TabIndex = 7;
             this.lblNumber.Text = "Number";
             this.lblNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(2, 195);
+            this.label2.Location = new System.Drawing.Point(2, 175);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 19);
@@ -103,10 +103,10 @@
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRole.Location = new System.Drawing.Point(89, 195);
+            this.lblRole.Location = new System.Drawing.Point(89, 175);
             this.lblRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(112, 39);
+            this.lblRole.Size = new System.Drawing.Size(113, 35);
             this.lblRole.TabIndex = 6;
             this.lblRole.Text = "Role";
             this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -115,10 +115,10 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblType.Location = new System.Drawing.Point(89, 156);
+            this.lblType.Location = new System.Drawing.Point(89, 140);
             this.lblType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(112, 39);
+            this.lblType.Size = new System.Drawing.Size(113, 35);
             this.lblType.TabIndex = 5;
             this.lblType.Text = "Type";
             this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -127,10 +127,10 @@
             // 
             this.lblLevelsAndLocations.AutoSize = true;
             this.lblLevelsAndLocations.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLevelsAndLocations.Location = new System.Drawing.Point(89, 117);
+            this.lblLevelsAndLocations.Location = new System.Drawing.Point(89, 105);
             this.lblLevelsAndLocations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLevelsAndLocations.Name = "lblLevelsAndLocations";
-            this.lblLevelsAndLocations.Size = new System.Drawing.Size(112, 39);
+            this.lblLevelsAndLocations.Size = new System.Drawing.Size(113, 35);
             this.lblLevelsAndLocations.TabIndex = 4;
             this.lblLevelsAndLocations.Text = "Levels and Locations";
             this.lblLevelsAndLocations.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -139,10 +139,10 @@
             // 
             this.lblVolumeOrSystem.AutoSize = true;
             this.lblVolumeOrSystem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblVolumeOrSystem.Location = new System.Drawing.Point(89, 78);
+            this.lblVolumeOrSystem.Location = new System.Drawing.Point(89, 70);
             this.lblVolumeOrSystem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVolumeOrSystem.Name = "lblVolumeOrSystem";
-            this.lblVolumeOrSystem.Size = new System.Drawing.Size(112, 39);
+            this.lblVolumeOrSystem.Size = new System.Drawing.Size(113, 35);
             this.lblVolumeOrSystem.TabIndex = 3;
             this.lblVolumeOrSystem.Text = "Volume or System";
             this.lblVolumeOrSystem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -151,10 +151,10 @@
             // 
             this.lblOriginator.AutoSize = true;
             this.lblOriginator.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblOriginator.Location = new System.Drawing.Point(89, 39);
+            this.lblOriginator.Location = new System.Drawing.Point(89, 35);
             this.lblOriginator.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOriginator.Name = "lblOriginator";
-            this.lblOriginator.Size = new System.Drawing.Size(112, 39);
+            this.lblOriginator.Size = new System.Drawing.Size(113, 35);
             this.lblOriginator.TabIndex = 2;
             this.lblOriginator.Text = "Originator";
             this.lblOriginator.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -166,7 +166,7 @@
             this.lblProjectCode.Location = new System.Drawing.Point(89, 0);
             this.lblProjectCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProjectCode.Name = "lblProjectCode";
-            this.lblProjectCode.Size = new System.Drawing.Size(112, 39);
+            this.lblProjectCode.Size = new System.Drawing.Size(113, 35);
             this.lblProjectCode.TabIndex = 1;
             this.lblProjectCode.Text = "Project Code";
             this.lblProjectCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -203,7 +203,7 @@
             this.tableLayoutPanel1.Controls.Add(this.pbLevel, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.pbType, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.pbRole, 3, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 10);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 11);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -214,7 +214,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(582, 280);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(585, 249);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // cbOriginator
@@ -223,10 +223,10 @@
             this.cbOriginator.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbOriginator.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbOriginator.FormattingEnabled = true;
-            this.cbOriginator.Location = new System.Drawing.Point(205, 48);
+            this.cbOriginator.Location = new System.Drawing.Point(206, 42);
             this.cbOriginator.Margin = new System.Windows.Forms.Padding(2);
             this.cbOriginator.Name = "cbOriginator";
-            this.cbOriginator.Size = new System.Drawing.Size(287, 21);
+            this.cbOriginator.Size = new System.Drawing.Size(288, 21);
             this.cbOriginator.TabIndex = 9;
             this.cbOriginator.Tag = "originator";
             this.cbOriginator.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -237,10 +237,10 @@
             this.cbVolumeOrSystem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbVolumeOrSystem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbVolumeOrSystem.FormattingEnabled = true;
-            this.cbVolumeOrSystem.Location = new System.Drawing.Point(205, 87);
+            this.cbVolumeOrSystem.Location = new System.Drawing.Point(206, 77);
             this.cbVolumeOrSystem.Margin = new System.Windows.Forms.Padding(2);
             this.cbVolumeOrSystem.Name = "cbVolumeOrSystem";
-            this.cbVolumeOrSystem.Size = new System.Drawing.Size(287, 21);
+            this.cbVolumeOrSystem.Size = new System.Drawing.Size(288, 21);
             this.cbVolumeOrSystem.TabIndex = 10;
             this.cbVolumeOrSystem.Tag = "volOrSystem";
             this.cbVolumeOrSystem.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -251,10 +251,10 @@
             this.cbLevelsAndLocations.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbLevelsAndLocations.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbLevelsAndLocations.FormattingEnabled = true;
-            this.cbLevelsAndLocations.Location = new System.Drawing.Point(205, 126);
+            this.cbLevelsAndLocations.Location = new System.Drawing.Point(206, 112);
             this.cbLevelsAndLocations.Margin = new System.Windows.Forms.Padding(2);
             this.cbLevelsAndLocations.Name = "cbLevelsAndLocations";
-            this.cbLevelsAndLocations.Size = new System.Drawing.Size(287, 21);
+            this.cbLevelsAndLocations.Size = new System.Drawing.Size(288, 21);
             this.cbLevelsAndLocations.TabIndex = 11;
             this.cbLevelsAndLocations.Tag = "levelsAndLocations";
             this.cbLevelsAndLocations.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -265,10 +265,10 @@
             this.cbType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(205, 165);
+            this.cbType.Location = new System.Drawing.Point(206, 147);
             this.cbType.Margin = new System.Windows.Forms.Padding(2);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(287, 21);
+            this.cbType.Size = new System.Drawing.Size(288, 21);
             this.cbType.TabIndex = 12;
             this.cbType.Tag = "type";
             this.cbType.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -279,10 +279,10 @@
             this.cbRole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbRole.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbRole.FormattingEnabled = true;
-            this.cbRole.Location = new System.Drawing.Point(205, 204);
+            this.cbRole.Location = new System.Drawing.Point(206, 182);
             this.cbRole.Margin = new System.Windows.Forms.Padding(2);
             this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(287, 21);
+            this.cbRole.Size = new System.Drawing.Size(288, 21);
             this.cbRole.TabIndex = 13;
             this.cbRole.Tag = "role";
             this.cbRole.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -292,10 +292,10 @@
             this.tbNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbNumber.Enabled = false;
-            this.tbNumber.Location = new System.Drawing.Point(205, 247);
+            this.tbNumber.Location = new System.Drawing.Point(206, 219);
             this.tbNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbNumber.Name = "tbNumber";
-            this.tbNumber.Size = new System.Drawing.Size(287, 20);
+            this.tbNumber.Size = new System.Drawing.Size(288, 20);
             this.tbNumber.TabIndex = 15;
             this.tbNumber.Tag = "number";
             // 
@@ -303,7 +303,7 @@
             // 
             this.btnGenerate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGenerate.Enabled = false;
-            this.btnGenerate.Location = new System.Drawing.Point(496, 243);
+            this.btnGenerate.Location = new System.Drawing.Point(499, 216);
             this.btnGenerate.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(83, 27);
@@ -316,7 +316,7 @@
             // 
             this.pbProjectCode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbProjectCode.Image = ((System.Drawing.Image)(resources.GetObject("pbProjectCode.Image")));
-            this.pbProjectCode.Location = new System.Drawing.Point(526, 7);
+            this.pbProjectCode.Location = new System.Drawing.Point(528, 5);
             this.pbProjectCode.Name = "pbProjectCode";
             this.pbProjectCode.Size = new System.Drawing.Size(24, 24);
             this.pbProjectCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -330,10 +330,10 @@
             this.cbProjectCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbProjectCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbProjectCode.FormattingEnabled = true;
-            this.cbProjectCode.Location = new System.Drawing.Point(205, 9);
+            this.cbProjectCode.Location = new System.Drawing.Point(206, 7);
             this.cbProjectCode.Margin = new System.Windows.Forms.Padding(2);
             this.cbProjectCode.Name = "cbProjectCode";
-            this.cbProjectCode.Size = new System.Drawing.Size(287, 21);
+            this.cbProjectCode.Size = new System.Drawing.Size(288, 21);
             this.cbProjectCode.TabIndex = 8;
             this.cbProjectCode.Tag = "projectCode";
             this.cbProjectCode.TextChanged += new System.EventHandler(this.OnFieldInput);
@@ -342,7 +342,7 @@
             // 
             this.pbOriginator.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbOriginator.Image = ((System.Drawing.Image)(resources.GetObject("pbOriginator.Image")));
-            this.pbOriginator.Location = new System.Drawing.Point(526, 46);
+            this.pbOriginator.Location = new System.Drawing.Point(528, 40);
             this.pbOriginator.Name = "pbOriginator";
             this.pbOriginator.Size = new System.Drawing.Size(24, 24);
             this.pbOriginator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -354,7 +354,7 @@
             // 
             this.pbVolume.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbVolume.Image = ((System.Drawing.Image)(resources.GetObject("pbVolume.Image")));
-            this.pbVolume.Location = new System.Drawing.Point(526, 85);
+            this.pbVolume.Location = new System.Drawing.Point(528, 75);
             this.pbVolume.Name = "pbVolume";
             this.pbVolume.Size = new System.Drawing.Size(24, 24);
             this.pbVolume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -366,7 +366,7 @@
             // 
             this.pbLevel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbLevel.Image = ((System.Drawing.Image)(resources.GetObject("pbLevel.Image")));
-            this.pbLevel.Location = new System.Drawing.Point(526, 124);
+            this.pbLevel.Location = new System.Drawing.Point(528, 110);
             this.pbLevel.Name = "pbLevel";
             this.pbLevel.Size = new System.Drawing.Size(24, 24);
             this.pbLevel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -378,7 +378,7 @@
             // 
             this.pbType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbType.Image = ((System.Drawing.Image)(resources.GetObject("pbType.Image")));
-            this.pbType.Location = new System.Drawing.Point(526, 163);
+            this.pbType.Location = new System.Drawing.Point(528, 145);
             this.pbType.Name = "pbType";
             this.pbType.Size = new System.Drawing.Size(24, 24);
             this.pbType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -390,7 +390,7 @@
             // 
             this.pbRole.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbRole.Image = ((System.Drawing.Image)(resources.GetObject("pbRole.Image")));
-            this.pbRole.Location = new System.Drawing.Point(526, 202);
+            this.pbRole.Location = new System.Drawing.Point(528, 180);
             this.pbRole.Name = "pbRole";
             this.pbRole.Size = new System.Drawing.Size(24, 24);
             this.pbRole.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -406,12 +406,12 @@
             this.tableLayoutPanel2.Controls.Add(this.btnCopy, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnClaim, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 331);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 300);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(600, 35);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(603, 35);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // btnCopy
@@ -419,7 +419,7 @@
             this.btnCopy.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnCopy.AutoSize = true;
             this.btnCopy.Enabled = false;
-            this.btnCopy.Location = new System.Drawing.Point(320, 6);
+            this.btnCopy.Location = new System.Drawing.Point(321, 6);
             this.btnCopy.Margin = new System.Windows.Forms.Padding(20, 2, 2, 2);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(86, 23);
@@ -433,7 +433,7 @@
             this.btnClaim.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClaim.AutoSize = true;
             this.btnClaim.Enabled = false;
-            this.btnClaim.Location = new System.Drawing.Point(193, 6);
+            this.btnClaim.Location = new System.Drawing.Point(194, 6);
             this.btnClaim.Margin = new System.Windows.Forms.Padding(2, 2, 20, 2);
             this.btnClaim.Name = "btnClaim";
             this.btnClaim.Size = new System.Drawing.Size(87, 23);
@@ -449,12 +449,12 @@
             this.tableLayoutPanel3.Controls.Add(this.lblInfo, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.lblFileName, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 293);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 262);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(600, 38);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(603, 38);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // lblInfo
@@ -472,13 +472,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(603, 335);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "EHL File Name Generator";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProjectCode)).EndInit();
