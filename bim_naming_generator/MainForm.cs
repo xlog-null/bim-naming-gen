@@ -19,6 +19,7 @@ namespace bim_naming_generator
         {
             InitializeComponent();
             presenter = new MainFormPresenter(this);
+            cbProjectCode.Items.AddRange(repo.LoadProjectCodes());
             LoadDataIntoFields();
             PopulatePictureBoxDict();
             ExtractFormData();
@@ -46,10 +47,21 @@ namespace bim_naming_generator
             formData.fields["number"].content = tbNumber.Text;
         }
 
+        // todo: don't keep data filenames in the MainForm file - bad design.
         private void LoadDataIntoFields()
         {
-            // todo: don't keep data filenames in the MainForm file - bad design.
-            cbProjectCode.Items.AddRange(repo.LoadData("project_codes.txt"));
+            cbOriginator.Text = "";
+            cbVolumeOrSystem.Text = 
+            cbLevelsAndLocations.Text = "";
+            cbType.Text = "";
+            cbRole.Text = "";
+
+            cbOriginator.Items.Clear();
+            cbVolumeOrSystem.Items.Clear();
+            cbLevelsAndLocations.Items.Clear();
+            cbType.Items.Clear();
+            cbRole.Items.Clear();
+
             cbOriginator.Items.AddRange(repo.LoadData("originators.txt"));
             cbVolumeOrSystem.Items.AddRange(repo.LoadData("vol_or_systems.txt"));
             cbLevelsAndLocations.Items.AddRange(repo.LoadData("levels.txt"));
@@ -68,6 +80,16 @@ namespace bim_naming_generator
             var fieldTag = field.Tag.ToString();
             formData.fields[fieldTag].SetContent(field.Text);
             var pbIsFieldValid = pictureBoxes[sender];
+
+            if (fieldTag.Equals("projectCode"))
+            {
+                bool projectDirChanged = repo.SetProjectCode(field.Text.ToString());
+                if (projectDirChanged)
+                {
+                    LoadDataIntoFields();
+                }
+            }
+
             if (formData.fields[fieldTag].IsValid())
             {
                 pbIsFieldValid.Visible = true;
