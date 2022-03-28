@@ -7,16 +7,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bim_naming_generator", "bim
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7FB7D9AB-0794-4AD6-AD3E-C7B5E494D34D}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EHL File Name Generator Setup", "setup_project\setup_project.vdproj", "{3C31461D-3BE2-4B7E-A1CB-6DD45E48EF98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{467370F7-A6B5-444C-B412-722C974858F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{467370F7-A6B5-444C-B412-722C974858F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{467370F7-A6B5-444C-B412-722C974858F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{467370F7-A6B5-444C-B412-722C974858F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467370F7-A6B5-444C-B412-722C974858F1}.Debug|x64.ActiveCfg = Debug|x64
+		{467370F7-A6B5-444C-B412-722C974858F1}.Debug|x64.Build.0 = Debug|x64
+		{467370F7-A6B5-444C-B412-722C974858F1}.Release|Any CPU.ActiveCfg = Release|x64
+		{467370F7-A6B5-444C-B412-722C974858F1}.Release|Any CPU.Build.0 = Release|x64
+		{467370F7-A6B5-444C-B412-722C974858F1}.Release|x64.ActiveCfg = Release|x64
+		{467370F7-A6B5-444C-B412-722C974858F1}.Release|x64.Build.0 = Release|x64
+		{3C31461D-3BE2-4B7E-A1CB-6DD45E48EF98}.Debug|Any CPU.ActiveCfg = Debug
+		{3C31461D-3BE2-4B7E-A1CB-6DD45E48EF98}.Debug|x64.ActiveCfg = Debug
+		{3C31461D-3BE2-4B7E-A1CB-6DD45E48EF98}.Debug|x64.Build.0 = Debug
+		{3C31461D-3BE2-4B7E-A1CB-6DD45E48EF98}.Release|Any CPU.ActiveCfg = Release
+		{3C31461D-3BE2-4B7E-A1CB-6DD45E48EF98}.Release|x64.ActiveCfg = Release
+		{3C31461D-3BE2-4B7E-A1CB-6DD45E48EF98}.Release|x64.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
