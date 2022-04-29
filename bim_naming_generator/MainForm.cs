@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace bim_naming_generator
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, MainFormPresenter.IView
     {
 
         private FormData formData = new FormData();
-        private Repository repo = new Repository();
 
         private Dictionary<object, PictureBox> pictureBoxes = new Dictionary<object, PictureBox>();
         private MainFormPresenter presenter;
@@ -19,16 +19,11 @@ namespace bim_naming_generator
         {
             InitializeComponent();
             presenter = new MainFormPresenter(this);
-            cbProjectCode.Items.AddRange(repo.LoadProjectCodes());
-            LoadDataIntoFields();
+            pbLoading.BringToFront();
             PopulatePictureBoxDict();
             ExtractFormData();
             DisplayResultFileName();
-        }
-
-        private void MainForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            presenter.OnFormClose();
+            SetLoading(false);
         }
 
         internal void UpdateFileName(string fileName)
@@ -40,33 +35,11 @@ namespace bim_naming_generator
         {
             formData.fields["projectCode"].content = cbProjectCode.Text;
             formData.fields["originator"].content = cbOriginator.Text;
-            formData.fields["volOrSystem"].content = cbVolumeOrSystem.Text;
-            formData.fields["levelsAndLocations"].content = cbLevelsAndLocations.Text;
-            formData.fields["type"].content = cbType.Text;
-            formData.fields["role"].content = cbRole.Text;
+            formData.fields["functional_breakdown"].content = cbFunctionalBreakdown.Text;
+            formData.fields["spatial_breakdown"].content = cbSpatialBreakdown.Text;
+            formData.fields["form"].content = cbForm.Text;
+            formData.fields["discipline"].content = cbDiscipline.Text;
             formData.fields["number"].content = tbNumber.Text;
-        }
-
-        // todo: don't keep data filenames in the MainForm file - bad design.
-        private void LoadDataIntoFields()
-        {
-            cbOriginator.Text = "";
-            cbVolumeOrSystem.Text = 
-            cbLevelsAndLocations.Text = "";
-            cbType.Text = "";
-            cbRole.Text = "";
-
-            cbOriginator.Items.Clear();
-            cbVolumeOrSystem.Items.Clear();
-            cbLevelsAndLocations.Items.Clear();
-            cbType.Items.Clear();
-            cbRole.Items.Clear();
-
-            cbOriginator.Items.AddRange(repo.LoadData("originators.txt"));
-            cbVolumeOrSystem.Items.AddRange(repo.LoadData("vol_or_systems.txt"));
-            cbLevelsAndLocations.Items.AddRange(repo.LoadData("levels.txt"));
-            cbType.Items.AddRange(repo.LoadData("types.txt"));
-            cbRole.Items.AddRange(repo.LoadData("roles.txt"));
         }
 
         private void DisplayResultFileName()
@@ -74,21 +47,20 @@ namespace bim_naming_generator
             lblFileName.Text = formData.ToString();
         }
 
-        private void OnFieldInput(object sender, EventArgs e)
+        private void OnProjectCodeChanged(object sender, EventArgs e)
         {
             var field = (Control)sender;
+            presenter.OnProjectCodeChanged(field.Text.ToString().ToUpper());
+            OnFieldInput(sender, e);
+        }
+
+        private void OnFieldInput(object sender, EventArgs e)
+        {
+            var field = (Control) sender;
             var fieldTag = field.Tag.ToString();
             formData.fields[fieldTag].SetContent(field.Text);
             var pbIsFieldValid = pictureBoxes[sender];
 
-            if (fieldTag.Equals("projectCode"))
-            {
-                bool projectDirChanged = repo.SetProjectCode(field.Text.ToString());
-                if (projectDirChanged)
-                {
-                    LoadDataIntoFields();
-                }
-            }
 
             if (formData.fields[fieldTag].IsValid())
             {
@@ -113,48 +85,15 @@ namespace bim_naming_generator
         {
             pictureBoxes.Add(cbProjectCode, pbProjectCode);
             pictureBoxes.Add(cbOriginator, pbOriginator);
-            pictureBoxes.Add(cbVolumeOrSystem, pbVolume);
-            pictureBoxes.Add(cbLevelsAndLocations, pbLevel);
-            pictureBoxes.Add(cbType, pbType);
-            pictureBoxes.Add(cbRole, pbRole);
-        }
-
-        public void OnGeneratorResult(string newNumber, bool success) 
-        {
-            if (success)
-            {
-                tbNumber.Text = newNumber;
-                formData.fields["number"].content = newNumber;
-                lblFileName.Text = formData.ToString();
-                btnClaim.Enabled = true;
-            } else
-            {
-                lblInfo.Text = "Error generating file name";
-                lblInfo.ForeColor = Color.DarkRed;
-                lblInfo.Visible = true;
-            }
-            
-        }
-
-        internal void OnFileClaimResult(string fileName, bool success, string errorMessage)
-        {
-            btnClaim.Enabled = !success;
-            lblInfo.Visible = true;
-            if (success)
-            {
-                lblInfo.Text = "File name claimed successfully.";
-                lblInfo.ForeColor = Color.DarkGreen;
-                btnCopy.Enabled = true;
-            } else
-            {
-                lblInfo.Text = errorMessage;
-                lblInfo.ForeColor = Color.DarkRed;
-                btnCopy.Enabled = false;
-            }
+            pictureBoxes.Add(cbFunctionalBreakdown, pbVolume);
+            pictureBoxes.Add(cbSpatialBreakdown, pbLevel);
+            pictureBoxes.Add(cbForm, pbType);
+            pictureBoxes.Add(cbDiscipline, pbRole);
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            SetLoading(true);
             btnCopy.Enabled = false;
             lblInfo.Visible = false;
             tbNumber.Text = "";
@@ -171,8 +110,109 @@ namespace bim_naming_generator
 
         private void btnClaim_Click(object sender, EventArgs e)
         {
+            SetLoading(true);
             btnGenerate.Focus();
             presenter.OnClaimClick(formData.ToString());
+        }
+
+        private void ClearFieldItemsAndInputs()
+        {
+            cbOriginator.Text = "";
+            cbFunctionalBreakdown.Text =
+            cbSpatialBreakdown.Text = "";
+            cbForm.Text = "";
+            cbDiscipline.Text = "";
+
+            cbOriginator.Items.Clear();
+            cbFunctionalBreakdown.Items.Clear();
+            cbSpatialBreakdown.Items.Clear();
+            cbForm.Items.Clear();
+            cbDiscipline.Items.Clear();
+        }
+
+        public void OnGenerateSuccess(string newNumber)
+        {
+            tbNumber.Text = newNumber;
+            formData.fields["number"].content = newNumber;
+            lblFileName.Text = formData.ToString();
+            btnClaim.Enabled = true;
+        }
+
+        public void OnGenerateFailure(string error)
+        {
+            DisplayError(error);
+        }
+
+        private void OnFileClaimResult(bool success)
+        {
+            SetLoading(false);
+            btnClaim.Enabled = !success;
+            lblInfo.Visible = true;
+        }
+
+        public void OnFileClaimSuccess(string filename)
+        {
+            lblInfo.Text = "File name claimed successfully.";
+            lblInfo.ForeColor = Color.DarkGreen;
+            btnCopy.Enabled = true;
+            OnFileClaimResult(true);
+        }
+
+        public void OnFileClaimFailure(string filename, string error)
+        {
+            DisplayError(error);
+            btnCopy.Enabled = false;
+            OnFileClaimResult(false);
+        }
+
+        public void LoadProjects(List<string> projects)
+        {
+            cbProjectCode.Items.Clear();
+            cbProjectCode.Items.AddRange(projects.ToArray());
+            SetLoading(false);
+        }
+
+        public void LoadFieldOptions(List<FieldOption> fieldOptions)
+        {
+            ClearFieldItemsAndInputs();
+
+            foreach (FieldOption fo in fieldOptions)
+            {
+                switch (fo.type)
+                {
+                    case "originator":
+                        cbOriginator.Items.Add(fo.ToString());
+                        break;
+                    case "functional_breakdown":
+                        cbFunctionalBreakdown.Items.Add(fo.ToString());
+                        break;
+                    case "spatial_breakdown":
+                        cbSpatialBreakdown.Items.Add(fo.ToString());
+                        break;
+                    case "form":
+                        cbForm.Items.Add(fo.ToString());
+                        break;
+                    case "discipline":
+                        cbDiscipline.Items.Add(fo.ToString());
+                        break;
+                    default:
+                        break;
+                }
+            }
+            SetLoading(false);
+        }
+
+        public void SetLoading(bool loading)
+        {
+            pbLoading.Visible = loading;
+            pbLoading.Refresh();
+        }
+
+        public void DisplayError(string error)
+        {
+            lblInfo.Visible = true;
+            lblInfo.Text = error;
+            lblInfo.ForeColor = Color.DarkRed;
         }
     }
 }

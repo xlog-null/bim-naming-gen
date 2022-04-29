@@ -5,31 +5,28 @@ namespace bim_naming_generator
 {
     internal class Generator
     {
-        private Database db;
-        private GeneratorListener listener;
+        private Repository repo;
 
-        public Generator(Database db, GeneratorListener listener)
+        public Generator(Repository repo)
         {
-            this.db = db;
-            this.listener = listener;
+            this.repo = repo;
         }
 
-        internal void GenerateNewNumber(string baseName)
+        internal string GenerateNewNumber(string baseName)
         {
-            var latestName = db.GetLatestName(baseName);
+            var latestName = repo.GetLatestName(baseName);
             var newNumber = "000001";
             if (latestName == "")
             {
-                listener.OnGenerateResult(newNumber, true);
-                return;
+                return newNumber;
             }
             string newName;
             do
             {
                 newNumber = GetNextNumber(latestName);
                 newName = baseName + newNumber;
-            } while (db.CheckIfExists(newName));
-            listener.OnGenerateResult(newNumber, true);
+            } while (repo.CheckIfExists(newName));
+            return newNumber;
         }
 
         private string GetNextNumber(string name)
@@ -42,6 +39,12 @@ namespace bim_naming_generator
         private string GetNumberFromFilename(string fileName)
         {
             return fileName.Split('-').Last();
+        }
+
+        interface IGeneratorListener
+        {
+            string OnGenerateResult();
+            
         }
     }
 }

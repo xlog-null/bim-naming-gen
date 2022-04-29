@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace bim_naming_generator
 {
+
+    /**
+     * Used by MainForm for field validation and storing user input.
+     * Not for storing project field options.
+     **/
     internal class Field
     {
-        public String content;
+        public string content;
         private int minChars, maxChars;
 
         public Field(String content, int minChars, int maxChars)
@@ -31,13 +36,6 @@ namespace bim_naming_generator
         public String GetDisplayString()
         {
             return content;
-            //if (IsValid())
-            //{
-            //    return content;
-            //} else
-            //{
-            //    return "?";
-            //}
         }
     }
 }

@@ -12,10 +12,10 @@ namespace bim_naming_generator
        {
            {"projectCode", new Field("", 2, 6) },
             {"originator", new Field("", 3, 6) },
-            {"volOrSystem", new Field("", 1, 2) },
-            {"levelsAndLocations", new Field("", 2, 2) },
-            {"type", new Field("", 2, 2) },
-            {"role", new Field("", 1, 2) },
+            {"functional_breakdown", new Field("", 1, 2) },
+            {"spatial_breakdown", new Field("", 2, 2) },
+            {"form", new Field("", 2, 2) },
+            {"discipline", new Field("", 1, 2) },
             {"number", new Field("", 2, 6) }
        };
 
