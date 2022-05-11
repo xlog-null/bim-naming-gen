@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace bim_naming_generator
@@ -13,7 +13,6 @@ namespace bim_naming_generator
 
         private Dictionary<object, PictureBox> pictureBoxes = new Dictionary<object, PictureBox>();
         private MainFormPresenter presenter;
-
 
         public MainForm()
         {
@@ -85,10 +84,10 @@ namespace bim_naming_generator
         {
             pictureBoxes.Add(cbProjectCode, pbProjectCode);
             pictureBoxes.Add(cbOriginator, pbOriginator);
-            pictureBoxes.Add(cbFunctionalBreakdown, pbVolume);
-            pictureBoxes.Add(cbSpatialBreakdown, pbLevel);
-            pictureBoxes.Add(cbForm, pbType);
-            pictureBoxes.Add(cbDiscipline, pbRole);
+            pictureBoxes.Add(cbFunctionalBreakdown, pbFunctionalBreakdown);
+            pictureBoxes.Add(cbSpatialBreakdown, pbSpatialBreakdown);
+            pictureBoxes.Add(cbForm, pbForm);
+            pictureBoxes.Add(cbDiscipline, pbDiscipline);
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -150,11 +149,14 @@ namespace bim_naming_generator
             lblInfo.Visible = true;
         }
 
-        public void OnFileClaimSuccess(string filename)
+        public void OnFileClaimSuccess(string filename, string dateTime)
         {
             lblInfo.Text = "File name claimed successfully.";
             lblInfo.ForeColor = Color.DarkGreen;
             btnCopy.Enabled = true;
+            var lvItem = new ListViewItem(filename);
+            lvItem.SubItems.Add(dateTime);
+            lvClaimed.Items.Add(lvItem);
             OnFileClaimResult(true);
         }
 
@@ -213,6 +215,82 @@ namespace bim_naming_generator
             lblInfo.Visible = true;
             lblInfo.Text = error;
             lblInfo.ForeColor = Color.DarkRed;
+        }
+
+        private void btnExpandClaimed_Click(object sender, EventArgs e)
+        {
+            tlClaimedPanel.Visible = !tlClaimedPanel.Visible;
+            OnResize(EventArgs.Empty);
+        }
+
+        public void LoadClaimHistory(List<string> filenames, List<string> dates)
+        {
+            lvClaimed.Items.Clear();
+            //var row = new ListViewItem(filenames[0]);
+            //row.SubItems.Add(dates[0]);
+            //lvClaimed.Items.Add(row);
+
+            for (int i = 0; i < filenames.Count; i++)
+            {
+                var row = new ListViewItem(filenames[i]);
+                row.SubItems.Add(dates[i]);
+                lvClaimed.Items.Add(row);
+            }
+        }
+
+        public void OnFetchClaimHistoryFailure(string error)
+        {
+            DisplayError(error);
+        }
+
+        private void lvClaimed_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            lvClaimed.ListViewItemSorter = new ListViewItemComparer(e.Column);
+        }
+    }
+
+    class ListViewItemComparer : IComparer
+    {
+        private int col;
+        private SortOrder order;
+
+
+        public ListViewItemComparer(int column)
+        {
+            col = column;
+            order = SortOrder.Ascending;
+        }
+
+        public int Compare(object x, object y)
+        {
+            int returnVal;
+            // Determine whether the type being compared is a date type.
+            try
+            {
+                // Parse the two objects passed as a parameter as a DateTime.
+                System.DateTime firstDate =
+                        DateTime.Parse(((ListViewItem)x).SubItems[col].Text);
+                System.DateTime secondDate =
+                        DateTime.Parse(((ListViewItem)y).SubItems[col].Text);
+                // Compare the two dates.
+                returnVal = DateTime.Compare(firstDate, secondDate);
+            }
+            // If neither compared object has a valid date format, compare
+            // as a string.
+            catch
+            {
+                // Compare the two items as a string.
+                returnVal = String.Compare(((ListViewItem)x).SubItems[col].Text,
+                            ((ListViewItem)y).SubItems[col].Text);
+            }
+            // Determine whether the sort order is descending.
+            if (order == SortOrder.Descending)
+            {
+                // Invert the value returned by String.Compare.
+                returnVal *= -1;
+            }
+                
+            return returnVal;
         }
     }
 }

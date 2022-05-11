@@ -24,6 +24,7 @@ namespace bim_naming_generator
             specialProjects.Add("E21356");
             repo.FetchProjects();
             repo.FetchFieldOptions(fieldOptionsSource);
+            repo.FetchClaimHistory(Environment.UserName);
         }
 
         private void SetFieldOptionsSource(string project)
@@ -99,14 +100,24 @@ namespace bim_naming_generator
             view.DisplayError(error);
         }
 
-        public void OnFileClaimSuccess(string filename)
+        public void OnFileClaimSuccess(string filename, string dateTime)
         {
-            view.OnFileClaimSuccess(filename);
+            view.OnFileClaimSuccess(filename, dateTime);
         }
 
         public void OnFileClaimFailure(string filename, string error)
         {
             view.OnFileClaimFailure(filename, error);
+        }
+
+        public void OnFetchClaimHistorySuccess(List<string> filenames, List<string> dates)
+        {
+            view.LoadClaimHistory(filenames, dates);
+        }
+
+        public void OnFetchClaimHistoryFailure(string error)
+        {
+            view.OnFetchClaimHistoryFailure(error);
         }
 
         public interface IView
@@ -115,10 +126,12 @@ namespace bim_naming_generator
             void LoadFieldOptions(List<FieldOption> fieldOptions);
             void OnGenerateSuccess(string newNumber);
             void OnGenerateFailure(string error);
-            void OnFileClaimSuccess(string filename);
+            void OnFileClaimSuccess(string filename, string dateTime);
             void OnFileClaimFailure(string filename, string error);
             void SetLoading(bool loading);
             void DisplayError(string error);
+            void LoadClaimHistory(List<string> filenames, List<string> dates);
+            void OnFetchClaimHistoryFailure(string error);
         }
     }
 }
